@@ -98,6 +98,7 @@ class Sniffer:
         def handler(signal, frame):
             AppHelper.stopEventLoop()
         signal.signal(signal.SIGINT, handler)
+        signal.signal(signal.SIGTERM, handler)
         AppHelper.runEventLoop()
 
     def cancel(self):
